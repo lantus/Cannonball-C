@@ -81,3 +81,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+release/config.xml
+*.wav
+*.mod
+*.mid
+*.bin
