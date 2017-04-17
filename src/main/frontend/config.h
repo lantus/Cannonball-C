@@ -51,6 +51,10 @@ typedef struct
     int fps_count;
     int hires;
     int filtering;
+#if defined (_AMIGA_) 
+    int detailLevel;
+    int clipPlane;
+#endif    
 } video_settings_t;
 
 typedef struct

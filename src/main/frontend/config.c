@@ -55,6 +55,7 @@ void Config_init()
     Config_video.widescreen = 0;
     Config_video.hires      = 0;
     Config_video.filtering  = 0;
+    Config_video.detailLevel = 1;
 
     Config_set_fps(Config_video.fps);
 

@@ -11,6 +11,10 @@
 #include <stdlib.h>
 #include "sdl/input.h"
 
+#include "engine/ohud.h"
+#include "frontend/config.h"
+ 
+
 Boolean Input_keys[15];
 Boolean Input_keys_old[15];
 
@@ -169,6 +173,15 @@ void Input_handle_key(const int key, const Boolean is_pressed)
 
         case SDLK_F5:
             Input_keys[INPUT_MENU] = is_pressed;
+            break;
+            
+        case SDLK_F9:
+            Config_video.detailLevel++;
+            if (Config_video.detailLevel > 2)
+                Config_video.detailLevel = 0;
+            
+            
+            
             break;
     }
 }

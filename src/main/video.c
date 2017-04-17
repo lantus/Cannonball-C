@@ -141,10 +141,15 @@ void Video_draw_frame()
     {
         // OutRun Hardware Video Emulation
         HWTiles_update_tile_values();
-
         HWRoad_render_background(Video_pixels);
-//        HWTiles_render_tile_layer(Video_pixels, 1, 0);      // background layer
-//        HWTiles_render_tile_layer(Video_pixels, 0, 0);      // foreground layer
+ 
+        if (Config_video.detailLevel == 2)        
+        {
+            HWTiles_render_tile_layer(Video_pixels, 1, 0);      // background layer
+            HWTiles_render_tile_layer(Video_pixels, 0, 0);      // foreground layer
+        }
+        
+        
         HWRoad_render_foreground(Video_pixels);
         HWSprites_render(8);
         HWTiles_render_text_layer(Video_pixels, 1);

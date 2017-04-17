@@ -1,7 +1,7 @@
 # Project: Cannonball
 # Compiler: m68k-Amiga-OS3
 # Compiler Type: MingW 3
-# Makefile created by wxDev-C++ 6.10.2 on 15/04/17 21:42
+# Makefile created by wxDev-C++ 6.10.2 on 16/04/17 12:32
 
 CPP       = m68k-amigaos-g++.exe
 CC        = m68k-amigaos-gcc.exe
