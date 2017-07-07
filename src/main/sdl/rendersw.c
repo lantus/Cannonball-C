@@ -135,7 +135,7 @@ Boolean Render_init(int src_width, int src_height,
             }
         }
         flags |= SDL_FULLSCREEN; // Set SDL flag
-        SDL_ShowCursor(FALSE);   // Don't show mouse cursor in full-screen mode
+        //SDL_ShowCursor(FALSE);   // Don't show mouse cursor in full-screen mode
     }
     // --------------------------------------------------------------------------------------------
     // Windowed Mode
@@ -153,7 +153,7 @@ Boolean Render_init(int src_width, int src_height,
         Render_dst_width  = Render_scn_width;
         Render_dst_height = Render_scn_height;
         
-        SDL_ShowCursor(TRUE);
+       // SDL_ShowCursor(TRUE);
     }
 
     // If we're not stretching the screen, centre the image
@@ -176,15 +176,16 @@ Boolean Render_init(int src_width, int src_height,
 
     //int bpp = info->vfmt->BitsPerPixel;
     const int bpp = 16;
-    const int available = SDL_VideoModeOK(Render_scn_width, Render_scn_height, bpp, flags);
+    //const int available = SDL_VideoModeOK(Render_scn_width, Render_scn_height, bpp, flags);
 
     // Frees (Deletes) existing surface
-    if (Render_surface)
-        SDL_FreeSurface(Render_surface);
+    //if (Render_surface)
+    //    SDL_FreeSurface(Render_surface);
 
     // Set the video mode
-    Render_surface = SDL_SetVideoMode(Render_scn_width, Render_scn_height, bpp, flags);
+    //Render_surface = SDL_SetVideoMode(Render_scn_width, Render_scn_height, bpp, flags);
 
+/*
     if (!Render_surface || !available)
     {
         fprintf(stderr, "Video mode set failed: %d.\n", SDL_GetError());
@@ -214,7 +215,7 @@ Boolean Render_init(int src_width, int src_height,
     if (Render_pix)
         free(Render_pix);
     Render_pix = (uint16_t*)malloc(Render_src_width * Render_src_height * sizeof(uint16_t));
-
+*/
     return TRUE;
 }
 
@@ -231,7 +232,7 @@ Boolean Render_start_frame()
 Boolean Render_finalize_frame()
 {
    
-    SDL_Flip(Render_surface);
+    //SDL_Flip(Render_surface);
 
     return TRUE;
 }
@@ -274,13 +275,13 @@ Boolean Render_sdl_screen_size()
 {
     if (Render_orig_width == 0 || Render_orig_height == 0)
     {
-        const SDL_VideoInfo* info = SDL_GetVideoInfo();
+        //const SDL_VideoInfo* info = SDL_GetVideoInfo();
 
-        if (!info)
-        {
+        //if (!info)
+        //{
             //std::cerr << "Video query failed: " << SDL_GetError() << std::endl;
-            return FALSE;
-        }
+        //    return FALSE;
+        //}
         
         Render_orig_width  = 320; 
         Render_orig_height = 224;

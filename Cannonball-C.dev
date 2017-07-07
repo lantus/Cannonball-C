@@ -1,7 +1,7 @@
 [Project]
 FileName=Cannonball-C.dev
 Name=Cannonball
-UnitCount=52
+UnitCount=54
 PchHead=-1
 PchSource=-1
 Ver=3
@@ -100,7 +100,7 @@ ResourceIncludes=
 MakeIncludes=
 Compiler=-m68020-60 -msoft-float -fomit-frame-pointer_@@_
 CppCompiler=_@@_
-Linker=-noixemul_@@_libSDL.a_@@_src/main/amiga/PTPlay30B.o_@@_
+Linker=-noixemul_@@_src/main/amiga/PTPlay30B.o_@@_
 PreprocDefines=_AMIGA__@@_
 CompilerSettings=0000000001001000000100
 Icon=
@@ -574,6 +574,26 @@ Compile=1
 Link=1
 Priority=1000
 OverrideBuildCmd=0
-BuildCmd=	$(CC) -c midimusic.c -o obj/midimusic.o $(CFLAGS)
+BuildCmd=$(CC) -c midimusic.c -o obj/midimusic.o $(CFLAGS)
 CompileCpp=0
+
+[Unit53]
+FileName=src\main\amiga\amiga_timer.c
+CompileCpp=0
+Folder=Amiga
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=	$(CC) -c amiga_timer.c -o obj/amiga_timer.o $(CFLAGS)
+
+[Unit54]
+FileName=src\main\amiga\amiga_video.c
+CompileCpp=0
+Folder=Amiga
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=	$(CC) -c video.c -o obj/video.o $(CFLAGS)
 

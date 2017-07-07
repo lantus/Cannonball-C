@@ -1,17 +1,17 @@
 # Project: Cannonball
 # Compiler: m68k-Amiga-OS3
 # Compiler Type: MingW 3
-# Makefile created by wxDev-C++ 6.10.2 on 16/04/17 12:32
+# Makefile created by wxDev-C++ 6.10.2 on 07/07/17 09:41
 
 CPP       = m68k-amigaos-g++.exe
 CC        = m68k-amigaos-gcc.exe
 WINDRES   = windres.exe
-OBJ       = obj/audio.o obj/input.o obj/rendersw.o obj/timer.o obj/hwroad.o obj/hwsprites.o obj/hwtiles.o obj/segapcm.o obj/ym2151.o obj/config.o obj/menu.o obj/ttrial.o obj/osound.o obj/osoundint.o obj/oanimseq.o obj/oattractai.o obj/obonus.o obj/ocrash.o obj/oentry.o obj/oferrari.o obj/ohiscore.o obj/ohud.o obj/oinitengine.o obj/oinputs.o obj/olevelobjs.o obj/ologo.o obj/omap.o obj/omusic.o obj/ooutputs.o obj/opalette.o obj/oroad.o obj/osmoke.o obj/osprite.o obj/osprites.o obj/ostats.o obj/otiles.o obj/otraffic.o obj/outils.o obj/outrun.o obj/asyncserial.o obj/interface.o obj/main.o obj/romloader.o obj/roms.o obj/trackloader.o obj/utils.o obj/video.o obj/xmlutils.o obj/crc.o obj/sxmlc.o obj/sxmlsearch.o obj/midimusic.o
-LINKOBJ   = obj/audio.o obj/input.o obj/rendersw.o obj/timer.o obj/hwroad.o obj/hwsprites.o obj/hwtiles.o obj/segapcm.o obj/ym2151.o obj/config.o obj/menu.o obj/ttrial.o obj/osound.o obj/osoundint.o obj/oanimseq.o obj/oattractai.o obj/obonus.o obj/ocrash.o obj/oentry.o obj/oferrari.o obj/ohiscore.o obj/ohud.o obj/oinitengine.o obj/oinputs.o obj/olevelobjs.o obj/ologo.o obj/omap.o obj/omusic.o obj/ooutputs.o obj/opalette.o obj/oroad.o obj/osmoke.o obj/osprite.o obj/osprites.o obj/ostats.o obj/otiles.o obj/otraffic.o obj/outils.o obj/outrun.o obj/asyncserial.o obj/interface.o obj/main.o obj/romloader.o obj/roms.o obj/trackloader.o obj/utils.o obj/video.o obj/xmlutils.o obj/crc.o obj/sxmlc.o obj/sxmlsearch.o obj/midimusic.o
-LIBS      = -L"F:/Development/CrossCompiler/AmiDevCpp/usr/local/amiga/m68k-amigaos/lib" -L"F:/Development/CrossCompiler/AmiDevCpp/usr/local/amiga/m68k-amigaos/lib/libb/libnix" -s -noixemul -noixemul libSDL.a src/main/amiga/PTPlay30B.o  -s 
-INCS      = -I"F:/Development/CrossCompiler/AmiDevCpp/usr/local/amiga/m68k-amigaos/sys-include" -I"F:/Development/CrossCompiler/AmiDevCpp/usr/local/amiga/m68k-amigaos/sys-include/SDL" -I"src/main" -I"src/main/SDL" -I"src/main/Amiga"
-CXXINCS   = -I"F:/Development/CrossCompiler/AmiDevCpp/usr/local/amiga/m68k-amigaos/sys-include" -I"F:/Development/CrossCompiler/AmiDevCpp/usr/local/amiga/m68k-amigaos/sys-include/SDL" -I"src/main" -I"src/main/SDL" -I"src/main/Amiga"
-RCINCS    = --include-dir "F:/Development/CrossCompiler/AmiDevCpp/include"
+OBJ       = obj/audio.o obj/input.o obj/rendersw.o obj/timer.o obj/hwroad.o obj/hwsprites.o obj/hwtiles.o obj/segapcm.o obj/ym2151.o obj/config.o obj/menu.o obj/ttrial.o obj/osound.o obj/osoundint.o obj/oanimseq.o obj/oattractai.o obj/obonus.o obj/ocrash.o obj/oentry.o obj/oferrari.o obj/ohiscore.o obj/ohud.o obj/oinitengine.o obj/oinputs.o obj/olevelobjs.o obj/ologo.o obj/omap.o obj/omusic.o obj/ooutputs.o obj/opalette.o obj/oroad.o obj/osmoke.o obj/osprite.o obj/osprites.o obj/ostats.o obj/otiles.o obj/otraffic.o obj/outils.o obj/outrun.o obj/asyncserial.o obj/interface.o obj/main.o obj/romloader.o obj/roms.o obj/trackloader.o obj/utils.o obj/video.o obj/xmlutils.o obj/crc.o obj/sxmlc.o obj/sxmlsearch.o obj/midimusic.o obj/amiga_timer.o obj/amiga_video.o
+LINKOBJ   = obj/audio.o obj/input.o obj/rendersw.o obj/timer.o obj/hwroad.o obj/hwsprites.o obj/hwtiles.o obj/segapcm.o obj/ym2151.o obj/config.o obj/menu.o obj/ttrial.o obj/osound.o obj/osoundint.o obj/oanimseq.o obj/oattractai.o obj/obonus.o obj/ocrash.o obj/oentry.o obj/oferrari.o obj/ohiscore.o obj/ohud.o obj/oinitengine.o obj/oinputs.o obj/olevelobjs.o obj/ologo.o obj/omap.o obj/omusic.o obj/ooutputs.o obj/opalette.o obj/oroad.o obj/osmoke.o obj/osprite.o obj/osprites.o obj/ostats.o obj/otiles.o obj/otraffic.o obj/outils.o obj/outrun.o obj/asyncserial.o obj/interface.o obj/main.o obj/romloader.o obj/roms.o obj/trackloader.o obj/utils.o obj/video.o obj/xmlutils.o obj/crc.o obj/sxmlc.o obj/sxmlsearch.o obj/midimusic.o obj/amiga_timer.o obj/amiga_video.o
+LIBS      = -L"C:/Development/AmiDevCpp/usr/local/amiga/m68k-amigaos/lib" -L"C:/Development/AmiDevCpp/usr/local/amiga/m68k-amigaos/lib/libb/libnix" -s -noixemul -noixemul src/main/amiga/PTPlay30B.o  -s 
+INCS      = -I"C:/Development/AmiDevCpp/usr/local/amiga/m68k-amigaos/sys-include" -I"C:/Development/AmiDevCpp/usr/local/amiga/m68k-amigaos/sys-include/SDL" -I"src/main" -I"src/main/SDL" -I"src/main/Amiga"
+CXXINCS   = -I"C:/Development/AmiDevCpp/usr/local/amiga/m68k-amigaos/sys-include" -I"C:/Development/AmiDevCpp/usr/local/amiga/m68k-amigaos/sys-include/SDL" -I"src/main" -I"src/main/SDL" -I"src/main/Amiga"
+RCINCS    = --include-dir "C:/DEVELO~1/AMIDEV~1/include"
 BIN       = release/Cannonball-C.exe
 DEFINES   =  -D_AMIGA_
 CXXFLAGS  = $(CXXINCS) $(DEFINES)    -s -noixemul -fexpensive-optimizations -O3
@@ -184,3 +184,9 @@ obj/sxmlsearch.o: $(GLOBALDEPS) src/main/thirdparty/sxmlc/sxmlsearch.c src/main/
 
 obj/midimusic.o: $(GLOBALDEPS) src/main/amiga/midimusic.c
 	$(CC) -c src/main/amiga/midimusic.c -o obj/midimusic.o $(CFLAGS)
+
+obj/amiga_timer.o: $(GLOBALDEPS) src/main/amiga/amiga_timer.c
+	$(CC) -c src/main/amiga/amiga_timer.c -o obj/amiga_timer.o $(CFLAGS)
+
+obj/amiga_video.o: $(GLOBALDEPS) src/main/amiga/amiga_video.c src/main/amiga/video.h
+	$(CC) -c src/main/amiga/amiga_video.c -o obj/amiga_video.o $(CFLAGS)

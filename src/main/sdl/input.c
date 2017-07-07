@@ -41,7 +41,7 @@ static const int CENTRE = 0x80;
 static const int DIGITAL_DEAD = 127;
 
 // SDL Joystick / Keypad
-SDL_Joystick *Input_stick;
+//SDL_Joystick *Input_stick;
 
 // Configurations for keyboard and joypad
 int* Input_pad_config;
@@ -65,20 +65,20 @@ void Input_init(int pad_id, int* key_config, int* pad_config, int analog, int* a
     Input_wheel_dead  = analog_settings[1];
     Input_pedals_dead = analog_settings[2];
 
-    Input_gamepad = SDL_NumJoysticks() > pad_id;
+    //Input_gamepad = SDL_NumJoysticks() > pad_id;
 
-    if (Input_gamepad)
-    {
-        Input_stick = SDL_JoystickOpen(pad_id);
-    }
+    //if (Input_gamepad)
+    //{
+    //   Input_stick = SDL_JoystickOpen(pad_id);
+    //}
 
     Input_a_wheel = CENTRE;
 }
 
 void Input_close()
 {
-    if (Input_gamepad && Input_stick != NULL)
-        SDL_JoystickClose(Input_stick);
+    //if (Input_gamepad && Input_stick != NULL)
+    //    SDL_JoystickClose(Input_stick);
 }
 
 // Detect whether a key press change has occurred

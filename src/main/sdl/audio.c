@@ -85,11 +85,13 @@ void Audio_init()
 
 void Audio_start_audio()
 {
+    
+    /*
     if (!Audio_sound_enabled)
     {
         if(SDL_Init(SDL_INIT_AUDIO) == -1) 
         {
-            fprintf(stderr, "Error initalizing audio: %d\n", SDL_GetError());        
+            fprintf(stderr, "Error initalizing audio: %d\n");        
             return;
         }
 
@@ -136,6 +138,10 @@ void Audio_start_audio()
 
         SDL_PauseAudio(0);
     }
+    
+    */
+    
+    Audio_sound_enabled = TRUE;
 }
 
 void Audio_clear_buffers()
@@ -238,7 +244,7 @@ void Audio_tick()
     int gap = dsp_write_pos - dsp_read_pos;
     // an estimation of the current gap, adding time since then
     if (callbacktick != 0)
-        Audio_gap_est = (int) (gap - (bytes_per_ms)*(SDL_GetTicks() - callbacktick));
+        Audio_gap_est = (int) (gap - (bytes_per_ms)*(getMilliseconds() - callbacktick));
 
     // if there isn't enough room...
     while (gap + bytes_written > dsp_buffer_bytes) 
@@ -246,7 +252,7 @@ void Audio_tick()
         // then we allow the callback to run..
         SDL_UnlockAudio();
         // and delay until it runs and allows space.
-        SDL_Delay(1);
+        sleep(1);
         SDL_LockAudio();
         //printf("sound buffer overflow:%d %d\n",gap, dsp_buffer_bytes);
         gap = dsp_write_pos - dsp_read_pos;
@@ -448,7 +454,7 @@ void fill_audio(void *udata, Uint8 *stream, int len)
     dsp_read_pos = newpos;
 
     // Record the tick at which the callback occured.
-    callbacktick = SDL_GetTicks();
+    callbacktick = getMilliseconds();
 }
 
 #endif

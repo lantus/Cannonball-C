@@ -27,7 +27,7 @@ void Timer_start(Timer* timer)
     timer->paused = FALSE;
 
     //Get the current clock time
-    timer->startTicks = SDL_GetTicks();
+    timer->startTicks = getMilliseconds();
 }
 
 void Timer_stop(Timer* timer)
@@ -48,7 +48,7 @@ void Timer_pause(Timer* timer)
         timer->paused = TRUE;
 
         //Calculate the paused ticks
-        timer->pausedTicks = SDL_GetTicks() - timer->startTicks;
+        timer->pausedTicks = getMilliseconds() - timer->startTicks;
     }
 }
 
@@ -61,7 +61,7 @@ void Timer_unpause(Timer* timer)
         timer->paused = FALSE;
 
         //Reset the starting ticks
-        timer->startTicks = SDL_GetTicks() - timer->pausedTicks;
+        timer->startTicks = getMilliseconds() - timer->pausedTicks;
 
         //Reset the paused ticks
         timer->pausedTicks = 0;
@@ -82,7 +82,7 @@ int Timer_get_ticks(Timer* timer)
         else
         {
             //Return the current time minus the start time
-            return SDL_GetTicks() - timer->startTicks;
+            return getMilliseconds() - timer->startTicks;
         }
     }
 

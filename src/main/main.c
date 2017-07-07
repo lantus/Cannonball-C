@@ -53,12 +53,14 @@ static void quit_func(int code)
     I_CAMD_StopSong();
     I_CAMD_ShutdownMusic();
     Input_close();
-    SDL_Quit();
+    //SDL_Quit();
     exit(code);
 }
 
 static void process_events(void)
 {
+    
+    /*
     SDL_Event event;
 
     // Grab all events from the queue.
@@ -96,6 +98,8 @@ static void process_events(void)
                 break;
         }
     }
+    
+    */
 }
 
 // Pause Engine
@@ -224,7 +228,7 @@ static void main_loop()
        // Cap Frame Rate: Sleep Remaining Frame Time
         if (t < deltatime)
         {
-            SDL_Delay((Uint32) (deltatime - t));
+            sleep((Uint32) (deltatime - t));
         }
         
         deltatime -= deltaintegral;
@@ -248,12 +252,14 @@ static void main_loop()
 int main(int argc, char* argv[])
 {
     // Initialize timer and video systems
-    if( SDL_Init( SDL_INIT_TIMER | SDL_INIT_VIDEO | SDL_INIT_JOYSTICK) == -1 ) 
-    { 
-		fprintf(stderr, "SDL Initialization failed: %d\n", SDL_GetError());
-        return 1; 
-    }
+    //if( SDL_Init( SDL_INIT_TIMER | SDL_INIT_VIDEO | SDL_INIT_JOYSTICK) == -1 ) 
+    //{ 
+	//	fprintf(stderr, "SDL Initialization failed: %d\n", SDL_GetError());
+    //    return 1; 
+    //}
 
+    initTimer();
+    
     TrackLoader_Create();
 
 
@@ -292,9 +298,7 @@ int main(int argc, char* argv[])
             fprintf(stderr, "Unable to load widescreen tilemaps.\n");
         }
 
-        //Set the window caption 
-        SDL_WM_SetCaption( "Cannonball", NULL ); 
-
+        
         Video_Create();
 
         // Initialize SDL Video
